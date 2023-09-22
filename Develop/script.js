@@ -26,14 +26,15 @@ $ ('.btn').on('click', function () {
   var timeBlockElms = $('.time-block')
 
   timeBlockElms.each(function() {
-    var currentHour = $(this).parent().attr('id');
-    console.log(dayjs(currentHour).hour());
+    var currentHour = parseInt($(this).attr('id'));
     var fromTime = dayjs().hour();
-    var toTime = dayjs(currentHour).hour()
-    if (toTime === fromTime) {
-      console.log('true');
-    } else if (toTime != fromTime) {
-      console.log('false');
+    parseInt($(this).attr('id'));
+    if (currentHour < fromTime) {
+      $(this).addClass('past');
+    } else if (currentHour === fromTime) {
+      $(this).addClass('present');
+    } else {
+      $(this).addClass('future');
     }
   });
 
@@ -61,6 +62,18 @@ $("#17 .description").val(localStorage.getItem('17'));
 $("#18 .description").val(localStorage.getItem('18'));
 $("#19 .description").val(localStorage.getItem('19'));
 $("#20 .description").val(localStorage.getItem('20'));
+$("#21 .description").val(localStorage.getItem('21'));
+$("#22 .description").val(localStorage.getItem('22'));
+$("#23 .description").val(localStorage.getItem('23'));
+$("#24 .description").val(localStorage.getItem('24'));
+$("#1 .description").val(localStorage.getItem('1'));
+$("#2 .description").val(localStorage.getItem('2'));
+$("#3 .description").val(localStorage.getItem('3'));
+$("#4 .description").val(localStorage.getItem('4'));
+$("#5 .description").val(localStorage.getItem('5'));
+$("#6 .description").val(localStorage.getItem('6'));
+$("#7 .description").val(localStorage.getItem('7'));
+$("#8 .description").val(localStorage.getItem('8'));
 
 
 
