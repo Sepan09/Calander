@@ -27,10 +27,12 @@ $ ('.btn').on('click', function () {
 
   timeBlockElms.each(function() {
     var currentHour = $(this).parent().attr('id');
+    console.log(dayjs(currentHour).hour());
     var fromTime = dayjs().hour();
-    if (currentHour === fromTime) {
+    var toTime = dayjs(currentHour).hour()
+    if (toTime === fromTime) {
       console.log('true');
-    } else {
+    } else if (toTime != fromTime) {
       console.log('false');
     }
   });
